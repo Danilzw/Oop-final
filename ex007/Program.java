@@ -8,9 +8,9 @@ public class Program
 
         Agency joAgency = new JobAgency();
 
-        Company company = new Company("Google", 20000,joAgency);
-        Company company2 = new Company("Microsoft", 15600,joAgency);
-        Company company3 = new Company("Mechta", 1000,joAgency);
+        Company company = new Company("Google", 20000,joAgency,"Developer");
+        Company company2 = new Company("Microsoft", 15600,joAgency,"Designer");
+        Company company3 = new Company("Mechta", 1000,joAgency,"Cleaner");
 
         Worker worker = new Worker("Sergey");
         Worker worker2 = new Worker("Oleg");

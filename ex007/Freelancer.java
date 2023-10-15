@@ -2,10 +2,15 @@ package ex007;
 
 import java.util.Random;
 
-public class Freelancer implements Observer {
+public class Freelancer implements Observer{
 
     private String name;
     private int salary;
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     public String getName() {
         return name;
@@ -20,6 +25,13 @@ public class Freelancer implements Observer {
 
         this.name = name;
         this.salary = random.nextInt();
+        if(random.nextBoolean())
+        {
+            this.status = "Developer";
+        }
+        {
+            this.status = "Designer";
+        }
     }
 
     public void getOffer(String name,int salaryComp)

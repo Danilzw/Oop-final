@@ -7,6 +7,6 @@ public interface Agency {
 
     public void removeobserv(Observer observer);
 
-    public void sendOffer(String name,int salary);
+    public void sendOffer(String name,int salary,String vacancy);
     
 }

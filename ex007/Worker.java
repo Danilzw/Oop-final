@@ -6,6 +6,11 @@ public class Worker implements Observer{
     
     private String name;
     private int salary;
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
 
     public String getName() {
         return name;
@@ -20,6 +25,13 @@ public class Worker implements Observer{
 
         this.name = name;
         this.salary = random.nextInt();
+        if(random.nextBoolean())
+        {
+            this.status = "Developer";
+        }
+        {
+            this.status = "Cleaner";
+        }
     }
 
     public void getOffer(String name,int salaryComp)
