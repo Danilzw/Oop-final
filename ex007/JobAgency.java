@@ -17,14 +17,11 @@ public class JobAgency implements Agency{
         observers.remove(observer);
     }
 
-    public void sendOffer(String name,int salary,String vacancy)
+    public void sendOffer(String name,int salary,EnumType enumType)
     {
         for(Observer observer:observers)
         {
-            if(vacancy == observer.getStatus())
-            {
-                observer.getOffer(name, salary);
-            }
+            observer.getOffer(name, salary,enumType);
             
         }
     }

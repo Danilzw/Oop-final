@@ -6,11 +6,7 @@ public class Worker implements Observer{
     
     private String name;
     private int salary;
-    private String status;
-
-    public String getStatus() {
-        return status;
-    }
+    private EnumType enumType;
 
     public String getName() {
         return name;
@@ -19,24 +15,21 @@ public class Worker implements Observer{
         return salary;
     }
 
-    public Worker(String name)
+    public Worker(String name,EnumType enumType)
     {
         Random random = new Random(20000);
 
         this.name = name;
         this.salary = random.nextInt();
-        if(random.nextBoolean())
-        {
-            this.status = "Developer";
-        }
-        {
-            this.status = "Cleaner";
-        }
+        this.enumType = enumType;
+        
     }
 
-    public void getOffer(String name,int salaryComp)
+    public void getOffer(String name,int salaryComp,EnumType compenumType)
     {
-        if(salaryComp <= salary)
+        if(enumType == compenumType)
+        {
+            if(salaryComp <= salary)
         {
             System.out.printf("Я готов принять работу! (Company:%s,SalaryComp:%d)",name,salaryComp);
         }
@@ -44,5 +37,11 @@ public class Worker implements Observer{
         {
             System.out.printf("Я НЕ готов принять работу! (Company:%s,SalaryComp:%d)",name,salaryComp);
         }
+        }
+        else
+        {
+            System.out.println("Я не буду работать не по профессии");
+        }
+        
     }
 }
